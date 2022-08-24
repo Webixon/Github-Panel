@@ -29,38 +29,48 @@ function showLoginPanel() {
 }
 showLoginPanel()
 
-
-
-
-
-
-function submitInput() {
-    submitBtn.addEventListener('click', () => {
-            if (regex.test(userName) && userName !== null) {
-               let request = new XMLHttpRequest()
+// function submitInput() {
+//     submitBtn.addEventListener('click', () => {
+//             if (regex.test(userName) && userName !== null) {
+    //            let request = new XMLHttpRequest()
              
-               request.open('GET', `https://api.github.com/users/${userName}`, true)
-               request.setRequestHeader('Authorization', `Bearer` + token)
-               request.onload = function () {
-                  var data = JSON.parse(this.response)
+    //            request.open('GET', `https://api.github.com/users/${userName}`, true)
+    //            request.setRequestHeader('Authorization', `Bearer` + token)
+    //            request.onload = function () {
+    //               var data = JSON.parse(this.response)
               
-                if (request.status >= 200 && request.status < 400) {
-                  console.log(data)
+    //             if (request.status >= 200 && request.status < 400) {
+    //               console.log(data)
                 
-                } else {
-                  console.log('error')
-                }
-              }
+    //             } else {
+    //               console.log('error')
+    //             }
+    //           }
               
-              request.send()    
+    //           request.send()    
             
-                    wrongInput.innerHTML = null; 
-                    loginPanel.style.display = 'none'
-                }
-                else {
-                    wrongInput.innerHTML = 'Wrong Username or Password!'
-                }
-            })
-    }
+    //                 wrongInput.innerHTML = null; 
+    //                 loginPanel.style.display = 'none'
+    //             }
+    //             else {
+    //                 wrongInput.innerHTML = 'Wrong Username or Password!'
+    //             }
+    //         })
+    // }
 
-    submitInput()
+    // submitInput()
+
+
+function getInfo() {
+fetch(`https://api.github.com/users/Webixon`, {
+    method: 'GET',
+    headers: {
+        "Authorization": "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"
+    }
+}) 
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
+
+ }
+ getInfo()
