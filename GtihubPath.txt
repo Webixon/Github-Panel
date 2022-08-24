@@ -1,0 +1,12 @@
+token do githuiba
+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
+
+
+ fetch(`https://api.github.com/users/${userName}`)
+        // .then((response) => response.json())
+        // .then((data) => console.log(data))
+        // .catch((err)=>console.error('Error', err))
+
+
+
+        curl -i -u your_username:$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 https://api.github.com/users/Webixon

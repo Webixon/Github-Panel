@@ -1,0 +1,96 @@
+:root{
+    --backgroundColor: rgb(175, 174, 174);
+    --font:'Audiowide';
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+
+.navBar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    width: 100vw;
+    background-color: var(--backgroundColor);
+    box-shadow: 0px 2px;
+
+}
+.title{
+    font-family: var(--font); /* title font*/
+    font-size: 2em;
+    font-weight: bold;    
+}
+
+.loginBtn{
+    display: block;
+    background-color: transparent;
+    font-family: var(--font);
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;  
+    cursor: pointer;  
+    transition: background-color .2s ease-in;
+}
+.loginBtn:hover{
+    background-color: white;
+}
+.loginPanel{
+    /* display: none; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 30vh;
+    width: 45vw;
+    min-width: 230px;
+    background-color: var(--backgroundColor) ;    
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 25px;
+    border: 2px solid black;
+}
+
+.form{
+    display: flex;
+    height: 70%;
+    width: 100%;
+    color:white;
+    font-family: var(--font);
+    justify-content: center;
+    align-items: center;
+    
+}
+.loginInput{
+    width: 200px;
+    margin: 10px 0px 10px;
+}
+.loginInput:focus{
+    outline: none;
+}
+.wrongInput {
+    position: absolute;
+    margin-left: 6px;
+    color:red
+}
+.submit{
+    display: flex;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+}
+.submitBtn{
+    font-family: var(--font);
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;  
+    cursor: pointer;  
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width:600px) {
+     
+}
